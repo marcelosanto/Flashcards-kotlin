@@ -1,21 +1,22 @@
 package flashcards
 
 fun main() {
-    val cards = mutableMapOf<String, String>()
-    while (true) {
-        println("Input the action (add, remove, import, export, ask, exit):")
-        when (readln()) {
-            "add" -> cardAdd(cards)
-            "remove" -> cardRemove(cards)
-            "import" -> cardImport(cards)
-            "export" -> cardExport(cards)
-            "ask" -> cardAsk(cards)
-            "exit" -> break
-            else -> continue
-        }
-        println(cards)
-
-    }
+    println(palindrome(Pair("cat", "dog")))
+//    val cards = mutableMapOf<String, String>()
+//    while (true) {
+//        println("Input the action (add, remove, import, export, ask, exit):")
+//        when (readln()) {
+//            "add" -> cardAdd(cards)
+//            "remove" -> cardRemove(cards)
+//            "import" -> cardImport(cards)
+//            "export" -> cardExport(cards)
+//            "ask" -> cardAsk(cards)
+//            "exit" -> break
+//            else -> continue
+//        }
+//        println(cards)
+//
+//    }
 
 //    for ((i, x) in cards) {
 //        println("Print the definition of \"$i\":")
@@ -90,4 +91,14 @@ fun cardAdd(cards: MutableMap<String, String>): MutableMap<String, String> {
         println("The pair (\"$card\":\"$definition\") has been added.")
         cards
     }
+}
+
+fun palindrome(pair: Pair<String, String>): Triple<String, String, Boolean> {
+    val nameOne = pair.first.split("")
+    println(nameOne)
+    val nameTwo = pair.second.split("").reversed()
+    println(nameTwo)
+    val bool = if (nameOne.size == nameTwo.size && pair.first != pair.second) nameOne.containsAll(nameTwo) else false
+
+    return Triple(pair.first, pair.second, bool)
 }

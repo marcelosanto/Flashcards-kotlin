@@ -1,0 +1,15 @@
+type: code
+files:
+  - name: src/Main.kt
+    visible: true
+    text: |-
+      fun palindrome(pair: Pair<String, String>): Triple<String, String, Boolean> {
+          // write your code here
+      }
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/19962#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Sun, 07 Aug 2022 01:48:39 UTC
+record: -1

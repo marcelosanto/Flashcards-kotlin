@@ -1,0 +1,95 @@
+<h2>Pair and Triple</h2>
+<html><body><p>In programming, we use functions when we want to perform a certain action, such as calculating the absolute value of a number or identifying a student with the best grades. However, functions have a "little" problem: they only return a value of a particular type. What if we want to return several values of different types? Kotlin offers us two special classes that help us handle this situation: <strong>Pair </strong>and <strong>Triple</strong>. Let's see how they work.</p>
+<h5 id="pair">Pair</h5>
+<p>Pair is a simple Kotlin datatype to store two values with the same or different types in a single instance. There doesn't need to be any relationship between the two values. Pair exhibits value semantics, i.e., two pairs are equal if both their components are equal. </p>
+<p>To create a new instance of Pair, we use a Pair constructor with the values and types for all data. Kotlin can infer the data type based on the values.</p>
+<pre><code class="language-kotlin">val pair = Pair(1, "one")
+println(pair) // (1, one)</code></pre>
+<p>We can use the infix function <code class="language-kotlin">to</code> to create a new Pair object:</p>
+<pre><code class="language-kotlin">val pair = 1 to "one"
+println(pair) // (1, one)</code></pre>
+<h5 id="how-to-work-with-pair">How to work with Pair</h5>
+<p>To work with the values, we can use <strong>first</strong> and <strong>second</strong> properties or the <code class="language-kotlin">componentN</code> method to extract the values from a Pair. The N value of <code class="language-kotlin">componentN</code> stands for the number of the component; for example, <code class="language-kotlin">component1</code> represents the first property or value of a Pair.</p>
+<pre><code class="language-kotlin">val pairOne = Pair("Hi", "I am a Pair")
+val pairTwo = "Hi" to "I am another Pair"
+
+// Properties
+println(pairOne.first) // Hi
+println(pairOne.second) // I am a Pair
+
+// Methods
+println(pairTwo.component1()) // Hi
+println(pairTwo.component2()) // I am another Pair
+
+</code></pre>
+<p>With Pair, we can use two special methods – <strong>toString()</strong> and <strong>toList():</strong></p>
+<ul>
+<li><strong>toString()</strong> returns the string representation of the Pair including its first and second values:</li>
+</ul>
+<pre><code class="language-kotlin">val pair = Pair("marks", listOf(8.0, 9.0, 10.0))
+println(pair) // (marks, [8.0, 9.0, 10.0]) toString() is implicit
+println(pair.toString()) // (marks, [8.0, 9.0, 10.0])</code></pre>
+<ul>
+<li><strong>toList()</strong> converts the Pair into a list:</li>
+</ul>
+<pre><code class="language-kotlin">val pair = Pair("marks", listOf(8.0, 9.0, 10.0))
+println(pair.toList()) // [marks, [8.0, 9.0, 10.0]]</code></pre>
+<p>Besides, we can use the <strong>copy()</strong> method to copy Pair objects and change their properties using the name the parameter (first and seconds, for example: <code class="language-kotlin">myCopy = pair.copy(first = "new Value", second = 3)</code></p>
+<pre><code class="language-kotlin">val pair = Pair("marks", listOf(8.0, 9.0, 10.0))
+val other = pair.copy()
+println(pair) // (marks, [8.0, 9.0, 10.0])
+println(other) // (marks, [8.0, 9.0, 10.0])</code></pre>
+<p>With the <code class="language-kotlin">copy()</code><strong> </strong>method,  you can also create a new Pair based on another Pair or change some properties. You must preserve the order of properties. Remember: the properties of a Pair are immutable, read-only. You must create a new Pair to change the values, or use the <code class="language-kotlin">copy</code> function to create a new Pair and assign it whatever values you want based on a previous object.</p>
+<pre><code class="language-kotlin">val pair = Pair("marks", listOf(8.0, 9.0, 10.0))
+val other = pair.copy("other")
+val grades = pair.copy(second = listOf(9.0, 7.0, 8.5))
+val myCopy = pair.copy(first = "other", second = listOf(1.0, 2.0, 3.0))
+println(pair) // (marks, [8.0, 9.0, 10.0])
+println(other) // (other, [8.0, 9.0, 10.0])
+println(grades) // (marks, [9.0, 7.0, 8.5])
+println(myCopy) // (other, [1.0, 2.0, 3.0])</code></pre>
+<h5 id="triple">Triple</h5>
+<p>Triple, like Pair, is a simple Kotlin datatype that represents a triad of values with the same or different types in a single instance.<br/>
+Like in the case of Pair, the type of each property of a Triple<strong> </strong>object can also be derived from the context. </p>
+<pre><code class="language-kotlin">val triple = Triple(1, "A", true)
+println(triple)</code></pre>
+<h5 id="how-to-work-with-triple">How to work with Triple</h5>
+<p>To work with the values, we can use <strong>first</strong>, <strong>second</strong>, and <strong>third</strong> properties or the <strong>componentN</strong> method to extract the values. The N value of <code class="language-kotlin">componentN</code> stands for the number of the component; for example, <code class="language-kotlin">component1</code> represents the first property or value of a Triple.</p>
+<pre><code class="language-kotlin">val triple = Triple(1, "I am", "Triple")
+
+// Properties
+println(triple.first) // 1
+println(triple.second) // I am
+println(triple.third) // Triple
+
+// Methods
+println(triple.component1()) // 1
+println(triple.component2()) // I am
+println(triple.component3()) // Triple
+
+</code></pre>
+<p>Like in the case of Pair, we have two special methods – <strong>toString()</strong> and <strong>toList()</strong>:</p>
+<ul>
+<li><strong>toString()</strong> returns the string representation of the Triple including its first, second, and third values:</li>
+</ul>
+<pre><code class="language-kotlin">val triple = Triple("marks", "Kotlin", listOf(8.0, 9.0, 10.0))
+println(triple) // (marks, Kotlin, [8.0, 9.0, 10.0])</code></pre>
+<ul>
+<li><strong>toList()</strong> converts the Triple into a list:</li>
+</ul>
+<pre><code class="language-kotlin">val triple = Triple("marks", "Kotlin", listOf(8.0, 9.0, 10.0))
+println(triple.toList()) //[marks, Kotlin, [8.0, 9.0, 10.0]]</code></pre>
+<p>Finally, we can use the <strong>copy() </strong>method to copy Triple objects:</p>
+<pre><code class="language-kotlin">val triple = Triple("marks", "Kotlin", listOf(8.0, 9.0, 10.0))
+val other = triple.copy()
+println(triple) // (marks, Kotlin, [8.0, 9.0, 10.0])
+println(other) // (marks, Kotlin, [8.0, 9.0, 10.0])</code></pre>
+<p>Like in the case of Pair, with the <code class="language-kotlin">copy()</code><strong> </strong>method you can create a new Triple based on another Triple or change some properties. You must preserve the order of properties. Remember: the properties of a Triple are immutable, read-only. You must create a new Triple to change the values, or use the <code class="language-kotlin">copy</code> function to create a new Triple and assign it whatever values you want based on a previous object.</p>
+<pre><code class="language-kotlin">val triple = Triple("marks", "Kotlin", listOf(8.0, 9.0, 10.0))
+val other = triple.copy("other", third=listOf(7.0, 9.0, 8.5))
+val course = triple.copy(second = "Kotlin Triple")
+println(triple) // (marks, Kotlin, [8.0, 9.0, 10.0])
+println(other) // (other, Kotlin, [7.0, 9.0, 8.5])
+println(course) // (marks, Kotlin Triple, [8.0, 9.0, 10.0])</code></pre>
+<h5 id="conclusion">Conclusion</h5>
+<p>Now you know how to easily return two or three values in Kotlin. Remember that in both Pair and Triple, the values can be of different types and that you can easily access them with their properties. Now you can use Pair and Triple to optimize your code without defining wrapper classes in order to work around the limitation of only one value returned by a function. Ready for some questions and tasks? Let's go!</p></body></html>

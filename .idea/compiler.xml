@@ -10,6 +10,11 @@
       <module name="Flashcards.Flashcards-task-build-test-results.main" target="11" />
       <module name="Flashcards.Flashcards-task-build-tmp.main" target="11" />
       <module name="Flashcards.Flashcards-task.main" target="11" />
+      <module name="Flashcards.Topics-Pair_and_Triple-Palindrome_problem.main" target="11" />
+      <module name="Flashcards.Topics-Pair_and_Triple-Personal_Info.main" target="11" />
+      <module name="Flashcards.Topics-Pair_and_Triple-Resume_with_marks.main" target="11" />
+      <module name="Flashcards.Topics-Pair_and_Triple-Sum_of_two_maps.main" target="11" />
+      <module name="Flashcards.Topics-Pair_and_Triple-Theory.main" target="11" />
       <module name="Flashcards.util.main" target="11" />
     </bytecodeTargetLevel>
   </component>
