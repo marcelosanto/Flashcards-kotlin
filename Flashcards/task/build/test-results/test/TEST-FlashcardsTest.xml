@@ -1,175 +1,336 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="FlashcardsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-08-06T01:08:35" hostname="marcelo-systemproductname" time="0.456">
+<testsuite name="FlashcardsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-08-08T18:36:08" hostname="marcelo-systemproductname" time="0.852">
   <properties/>
-  <testcase name="start" classname="FlashcardsTest" time="0.456"/>
+  <testcase name="start" classname="FlashcardsTest" time="0.852"/>
   <system-out><![CDATA[?[1;31m
 Start test 1?[0m
-Input the number of cards:
+Input the action (add, remove, import, export, ask, exit):
+> exit
+Bye bye!
 ?[1;31m
 Start test 2?[0m
-Input the number of cards:
-> 6
-Card #1:
-> print()
-The definition for card #1:
-> outputs text
-Card #2:
-> str()
-The definition for card #2:
-> converts to a string
-Card #3:
-> son
-The definition for card #3:
-> a male child
-Card #4:
-> daughter
-The definition for card #4:
-> a female child
-Card #5:
-> uncle
-The definition for card #5:
-> a brother of one's parent
-Card #6:
-> ankle
-The definition for card #6:
-> a part of the body where the foot and the leg meet
-Print the definition of "print()":
-> outputs text
-Correct!
-Print the definition of "str()":
-> converts to a string
-Correct!
-Print the definition of "son":
-> a male child
-Correct!
-Print the definition of "daughter":
-> a female child
-Correct!
-Print the definition of "uncle":
-> a brother of one's parent
-Correct!
-Print the definition of "ankle":
-> a part of the body where the foot and the leg meet
-Correct!
+Input the action (add, remove, import, export, ask, exit):
+> add
+The Card:
+> France
+The definition of the card:
+> Paris
+The pair ("France":"Paris") has been added.
+Input the action (add, remove, import, export, ask, exit):
+> add
+The Card:
+> France
+The card "France" already exists.
+Input the action (add, remove, import, export, ask, exit):
+> add
+The Card:
+> Great Britain
+The definition of the card:
+> Paris
+The definition "Paris" already exists.
+Input the action (add, remove, import, export, ask, exit):
+> exit
+Bye bye!
 ?[1;31m
 Start test 3?[0m
-Input the number of cards:
-> 4
-Card #1:
-> print()
-The definition for card #1:
-> outputs text
-Card #2:
-> print()
-The term "print()" already exists. Try again:
-> son
-The definition for card #2:
-> a male child
-Card #3:
-> str()
-The definition for card #3:
-> converts to a string
-Card #4:
-> daughter
-The definition for card #4:
-> a male child
-The definition "a male child" already exists. Try again:
+Input the action (add, remove, import, export, ask, exit):
+> add
+The Card:
+> France
+The definition of the card:
+> Paris
+The pair ("France":"Paris") has been added.
+Input the action (add, remove, import, export, ask, exit):
+> add
+The Card:
+> Japan
+The definition of the card:
+> Tokyo
+The pair ("Japan":"Tokyo") has been added.
+Input the action (add, remove, import, export, ask, exit):
+> add
+The Card:
+> Great Britain
+The definition of the card:
+> London
+The pair ("Great Britain":"London") has been added.
+Input the action (add, remove, import, export, ask, exit):
+> remove
+Which card?
+> Japan
+The card has been removed.
+Input the action (add, remove, import, export, ask, exit):
+> remove
+Which card?
+> Wakanda
+Can't remove "Wakanda": there is no such card.
+Input the action (add, remove, import, export, ask, exit):
+> remove
+Which card?
+> Tokyo
+Can't remove "Tokyo": there is no such card.
+Input the action (add, remove, import, export, ask, exit):
+> exit
+Bye bye!
 ?[1;31m
 Start test 4?[0m
-Input the number of cards:
-> 2
-Card #1:
-> print()
-The definition for card #1:
-> outputs text
-Card #2:
-> print()
-The term "print()" already exists. Try again:
-> str()
-The definition for card #2:
-> outputs text
-The definition "outputs text" already exists. Try again:
-> converts to a string
-Print the definition of "print()":
-> outputs text
-Correct!
-Print the definition of "str()":
-> converts to a string
-Correct!
+Input the action (add, remove, import, export, ask, exit):
+> add
+The Card:
+> Japan
+The definition of the card:
+> Tokyo
+The pair ("Japan":"Tokyo") has been added.
+Input the action (add, remove, import, export, ask, exit):
+> add
+The Card:
+> France
+The definition of the card:
+> Paris
+The pair ("France":"Paris") has been added.
+Input the action (add, remove, import, export, ask, exit):
+> export
+File name:
+> capitals.txt
+2 cards have been saved.
+Input the action (add, remove, import, export, ask, exit):
+> exit
+Bye bye!
 ?[1;31m
 Start test 5?[0m
-Input the number of cards:
-> 6
-Card #1:
-> print()
-The definition for card #1:
-> outputs text
-Card #2:
-> str()
-The definition for card #2:
-> converts to a string
-Card #3:
-> son
-The definition for card #3:
-> a male child
-Card #4:
-> daughter
-The definition for card #4:
-> a female child
-Card #5:
-> uncle
-The definition for card #5:
-> a brother of one's parent
-Card #6:
-> ankle
-The definition for card #6:
-> a part of the body where the foot and the leg meet
-Print the definition of "print()":
-> converts to a string
-Wrong. The right answer is "outputs text", but your definition is correct for "str()".
-Print the definition of "str()":
-> outputs text
-Wrong. The right answer is "converts to a string", but your definition is correct for "print()".
-Print the definition of "son":
-> a female child
-Wrong. The right answer is "a male child", but your definition is correct for "daughter".
-Print the definition of "daughter":
-> a male child
-Wrong. The right answer is "a female child", but your definition is correct for "son".
-Print the definition of "uncle":
-> a part of the body where the foot and the leg meet
-Wrong. The right answer is "a brother of one's parent", but your definition is correct for "ankle".
-Print the definition of "ankle":
-> a brother of one's parent
-Wrong. The right answer is "a part of the body where the foot and the leg meet", but your definition is correct for "uncle".
+Input the action (add, remove, import, export, ask, exit):
+> add
+The Card:
+> Canada
+The definition of the card:
+> Ottawa
+The pair ("Canada":"Ottawa") has been added.
+Input the action (add, remove, import, export, ask, exit):
+> add
+The Card:
+> Netherlands
+The definition of the card:
+> Amsterdam
+The pair ("Netherlands":"Amsterdam") has been added.
+Input the action (add, remove, import, export, ask, exit):
+> add
+The Card:
+> Russia
+The definition of the card:
+> Moscow
+The pair ("Russia":"Moscow") has been added.
+Input the action (add, remove, import, export, ask, exit):
+> add
+The Card:
+> United Kingdom
+The definition of the card:
+> London
+The pair ("United Kingdom":"London") has been added.
+Input the action (add, remove, import, export, ask, exit):
+> add
+The Card:
+> Nigeria
+The definition of the card:
+> Abuja
+The pair ("Nigeria":"Abuja") has been added.
+Input the action (add, remove, import, export, ask, exit):
+> add
+The Card:
+> Germany
+The definition of the card:
+> Berlin
+The pair ("Germany":"Berlin") has been added.
+Input the action (add, remove, import, export, ask, exit):
+> export
+File name:
+> capitalsNew.txt
+6 cards have been saved.
+Input the action (add, remove, import, export, ask, exit):
+> exit
+Bye bye!
 ?[1;31m
 Start test 6?[0m
-Input the number of cards:
-> 6
-Card #1:
+Input the action (add, remove, import, export, ask, exit):
+> import
+File name:
+> ghost_file.txt
+File not found.
+Input the action (add, remove, import, export, ask, exit):
+> import
+File name:
+> capitals.txt
+2 cards have been loaded.
+Input the action (add, remove, import, export, ask, exit):
+> remove
+Which card?
+> Japan
+The card has been removed.
+Input the action (add, remove, import, export, ask, exit):
+> export
+File name:
+> capitals.txt
+1 cards have been saved.
+Input the action (add, remove, import, export, ask, exit):
+> import
+File name:
+> capitalsNew.txt
+6 cards have been loaded.
+Input the action (add, remove, import, export, ask, exit):
+> export
+File name:
+> capitalsNew.txt
+7 cards have been saved.
+Input the action (add, remove, import, export, ask, exit):
+> exit
+Bye bye!
+?[1;31m
+Start test 7?[0m
+Input the action (add, remove, import, export, ask, exit):
+> add
+The Card:
+> France
+The definition of the card:
+> Eiffel Tower
+The pair ("France":"Eiffel Tower") has been added.
+Input the action (add, remove, import, export, ask, exit):
+> import
+File name:
+> capitals.txt
+1 cards have been loaded.
+Input the action (add, remove, import, export, ask, exit):
+> ask
+How many times to ask?
+> 1
+Print the definition of "France":
+> Eiffel Tower
+Wrong. The right answer is "Paris", but your definition is correct for "".
+Input the action (add, remove, import, export, ask, exit):
+> ask
+How many times to ask?
+> 1
+Print the definition of "France":
+> Paris
+Correct!
+Input the action (add, remove, import, export, ask, exit):
+> exit
+Bye bye!
+?[1;31m
+Start test 8?[0m
+Input the action (add, remove, import, export, ask, exit):
+> add
+The Card:
 > print()
-The definition for card #1:
+The definition of the card:
 > outputs text
-Card #2:
+The pair ("print()":"outputs text") has been added.
+Input the action (add, remove, import, export, ask, exit):
+> add
+The Card:
 > str()
-The definition for card #2:
+The definition of the card:
 > converts to a string
-Card #3:
+The pair ("str()":"converts to a string") has been added.
+Input the action (add, remove, import, export, ask, exit):
+> add
+The Card:
 > son
-The definition for card #3:
+The definition of the card:
 > a male child
-Card #4:
+The pair ("son":"a male child") has been added.
+Input the action (add, remove, import, export, ask, exit):
+> add
+The Card:
 > daughter
-The definition for card #4:
+The definition of the card:
 > a female child
-Card #5:
+The pair ("daughter":"a female child") has been added.
+Input the action (add, remove, import, export, ask, exit):
+> add
+The Card:
 > uncle
-The definition for card #5:
+The definition of the card:
 > a brother of one's parent
-Card #6:
+The pair ("uncle":"a brother of one's parent") has been added.
+Input the action (add, remove, import, export, ask, exit):
+> add
+The Card:
 > ankle
-The definition for card #6:
+The definition of the card:
 > a part of the body where the foot and the leg meet
+The pair ("ankle":"a part of the body where the foot and the leg meet") has been added.
+Input the action (add, remove, import, export, ask, exit):
+> ask
+How many times to ask?
+> 6
+Print the definition of "print()":
+> outputs text
+Correct!
+Print the definition of "str()":
+> converts to a string
+Correct!
+Print the definition of "son":
+> a male child
+Correct!
+Print the definition of "daughter":
+> a female child
+Correct!
+Print the definition of "uncle":
+> a brother of one's parent
+Correct!
+Print the definition of "ankle":
+> a part of the body where the foot and the leg meet
+Correct!
+Input the action (add, remove, import, export, ask, exit):
+> exit
+Bye bye!
+?[1;31m
+Start test 9?[0m
+Input the action (add, remove, import, export, ask, exit):
+> add
+The Card:
+> print()
+The definition of the card:
+> outputs text
+The pair ("print()":"outputs text") has been added.
+Input the action (add, remove, import, export, ask, exit):
+> add
+The Card:
+> str()
+The definition of the card:
+> converts to a string
+The pair ("str()":"converts to a string") has been added.
+Input the action (add, remove, import, export, ask, exit):
+> add
+The Card:
+> son
+The definition of the card:
+> a male child
+The pair ("son":"a male child") has been added.
+Input the action (add, remove, import, export, ask, exit):
+> add
+The Card:
+> daughter
+The definition of the card:
+> a female child
+The pair ("daughter":"a female child") has been added.
+Input the action (add, remove, import, export, ask, exit):
+> add
+The Card:
+> uncle
+The definition of the card:
+> a brother of one's parent
+The pair ("uncle":"a brother of one's parent") has been added.
+Input the action (add, remove, import, export, ask, exit):
+> add
+The Card:
+> ankle
+The definition of the card:
+> a part of the body where the foot and the leg meet
+The pair ("ankle":"a part of the body where the foot and the leg meet") has been added.
+Input the action (add, remove, import, export, ask, exit):
+> ask
+How many times to ask?
+> 6
 Print the definition of "print()":
 > outputs text line by line
 Wrong. The right answer is "outputs text", but your definition is correct for "".
@@ -188,52 +349,78 @@ Wrong. The right answer is "a brother of one's parent", but your definition is c
 Print the definition of "ankle":
 > a part of the body where the foot and the leg meet or the arm
 Wrong. The right answer is "a part of the body where the foot and the leg meet", but your definition is correct for "".
+Input the action (add, remove, import, export, ask, exit):
+> exit
+Bye bye!
 ?[1;31m
-Start test 7?[0m
-Input the number of cards:
-> 6
-Card #1:
+Start test 10?[0m
+Input the action (add, remove, import, export, ask, exit):
+> add
+The Card:
 > print()
-The definition for card #1:
+The definition of the card:
 > outputs text
-Card #2:
+The pair ("print()":"outputs text") has been added.
+Input the action (add, remove, import, export, ask, exit):
+> add
+The Card:
 > str()
-The definition for card #2:
+The definition of the card:
 > converts to a string
-Card #3:
+The pair ("str()":"converts to a string") has been added.
+Input the action (add, remove, import, export, ask, exit):
+> add
+The Card:
 > son
-The definition for card #3:
+The definition of the card:
 > a male child
-Card #4:
+The pair ("son":"a male child") has been added.
+Input the action (add, remove, import, export, ask, exit):
+> add
+The Card:
 > daughter
-The definition for card #4:
+The definition of the card:
 > a female child
-Card #5:
+The pair ("daughter":"a female child") has been added.
+Input the action (add, remove, import, export, ask, exit):
+> add
+The Card:
 > uncle
-The definition for card #5:
+The definition of the card:
 > a brother of one's parent
-Card #6:
+The pair ("uncle":"a brother of one's parent") has been added.
+Input the action (add, remove, import, export, ask, exit):
+> add
+The Card:
 > ankle
-The definition for card #6:
+The definition of the card:
 > a part of the body where the foot and the leg meet
+The pair ("ankle":"a part of the body where the foot and the leg meet") has been added.
+Input the action (add, remove, import, export, ask, exit):
+> ask
+How many times to ask?
+> 6
 Print the definition of "print()":
-> outputs
-Wrong. The right answer is "outputs text", but your definition is correct for "".
+> converts to a string
+Wrong. The right answer is "outputs text", but your definition is correct for "str()".
 Print the definition of "str()":
-> converts a string
-Wrong. The right answer is "converts to a string", but your definition is correct for "".
+> a male child
+Wrong. The right answer is "converts to a string", but your definition is correct for "son".
 Print the definition of "son":
-> a child
-Wrong. The right answer is "a male child", but your definition is correct for "".
+> a female child
+Wrong. The right answer is "a male child", but your definition is correct for "daughter".
 Print the definition of "daughter":
-> a child
-Wrong. The right answer is "a female child", but your definition is correct for "".
+> a brother of one's parent
+Wrong. The right answer is "a female child", but your definition is correct for "uncle".
 Print the definition of "uncle":
-> a brother of one
-Wrong. The right answer is "a brother of one's parent", but your definition is correct for "".
+> a part of the body where the foot and the leg meet
+Wrong. The right answer is "a brother of one's parent", but your definition is correct for "ankle".
 Print the definition of "ankle":
-> a part of the body where the foot meet
-Wrong. The right answer is "a part of the body where the foot and the leg meet", but your definition is correct for "".
+> a brother of one's parent
+Wrong. The right answer is "a part of the body where the foot and the leg meet", but your definition is correct for "uncle".
+Input the action (add, remove, import, export, ask, exit):
+> exit
+Bye bye!
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

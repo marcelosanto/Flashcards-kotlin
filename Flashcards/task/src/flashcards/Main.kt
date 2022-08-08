@@ -36,7 +36,7 @@ fun main() {
             }
             else -> continue
         }
-        println(cards)
+
 
     }
 
@@ -55,11 +55,10 @@ fun cardImport(
         val tasks = cardsFile.readText()
         val cardList = cardAdapter.fromJson(tasks)
 
-        cardList.let {
-            if (it != null) {
-                cards.putAll(it)
-                println("${cards.size} cards have been loaded.")
-            }
+        cardList!!.let {
+            cards.putAll(it)
+            println("${cardList.size} cards have been loaded.")
+
         }
     } else println("File not found.")
 }
@@ -81,7 +80,31 @@ fun cardExport(
 
 
 fun cardAsk(cards: MutableMap<String, String>) {
-    TODO("Not yet implemented")
+    println("How many times to ask?")
+    val askTime = readln().toInt()
+
+    var count = 0
+
+    for ((i, x) in cards) {
+        if (count == askTime) break
+
+        println("Print the definition of \"$i\":")
+        val definition = readln()
+        if (definition == x) println("Correct!")
+        else {
+            if (cards.containsValue(x)) {
+                println(
+                    "Wrong. The right answer is \"$x\", but your definition is correct for \"${
+                        cards.filterValues { definition == it }.keys
+                    }\".".replace("(\\[|\\])".toRegex(), "")
+                )
+            } else println("Wrong. The right answer is \"$x\".")
+        }
+
+        count++
+    }
+
+
 }
 
 fun cardRemove(cards: MutableMap<String, String>) {
@@ -94,7 +117,7 @@ fun cardRemove(cards: MutableMap<String, String>) {
 }
 
 fun cardAdd(cards: MutableMap<String, String>): MutableMap<String, String> {
-    println("The Car:")
+    println("The Card:")
     val card = readln().let {
         var temp = it
         while (true) {
