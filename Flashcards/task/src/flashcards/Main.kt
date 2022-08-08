@@ -1,17 +1,56 @@
 package flashcards
 
+import com.squareup.moshi.JsonAdapter
+import com.squareup.moshi.Moshi
+import com.squareup.moshi.Types
+import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import java.io.File
+
 fun main() {
 
+    val workingDirectory = System.getProperty("user.dir")
+    val separator = File.separator
+
     val cards = mutableMapOf<String, String>()
+    val txt = "$workingDirectory${separator}cards.json"
+    val taskJson = File(txt)
+
+    val moshi = Moshi.Builder()
+        .add(KotlinJsonAdapterFactory())
+        .build()
+
+
+    val type = Types.newParameterizedType(
+        MutableMap::class.java,
+        String::class.java,
+        String::class.java
+    )
+
+    val taskAdapter = moshi.adapter<MutableMap<String, String>>(type)
+
+    if (taskJson.exists()) {
+        val tasks = taskJson.readText()
+        val tskList = taskAdapter.fromJson(tasks)
+
+        tskList?.let {
+            cards.putAll(it)
+        }
+    }
+
+
+
     while (true) {
         println("Input the action (add, remove, import, export, ask, exit):")
         when (readln()) {
             "add" -> cardAdd(cards)
             "remove" -> cardRemove(cards)
             "import" -> cardImport(cards)
-            "export" -> cardExport(cards)
+            "export" -> cardExport(taskAdapter, taskJson, cards)
             "ask" -> cardAsk(cards)
-            "exit" -> break
+            "exit" -> {
+                println("Bye bye!")
+                break
+            }
             else -> continue
         }
         println(cards)
@@ -35,8 +74,20 @@ fun main() {
 
 }
 
-fun cardExport(cards: MutableMap<String, String>) {
-    TODO("Not yet implemented")
+fun saveToJson(
+    taskAdapter: JsonAdapter<MutableMap<String, String>>,
+    taskJson: File,
+    cards: MutableMap<String, String>
+) {
+    taskJson.writeText(taskAdapter.toJson(cards))
+}
+
+fun cardExport(
+    taskAdapter: JsonAdapter<MutableMap<String, String>>,
+    taskJson: File,
+    cards: MutableMap<String, String>
+) {
+    saveToJson(taskAdapter, taskJson, cards)
 }
 
 fun cardImport(cards: MutableMap<String, String>) {

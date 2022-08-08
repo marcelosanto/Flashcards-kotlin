@@ -1,18 +1,18 @@
 type: edu
 custom_name: Menu, please!
 files:
-- name: src/flashcards/Main.kt
-  visible: true
-  text: |
-    package flashcards
-
-    fun main() {
-        println("Hello, World!")
-    }
-  learner_created: false
-- name: test/FlashcardsTest.java
-  visible: false
-  text: "import org.hyperskill.hstest.dynamic.input.DynamicTestingMethod;\nimport\
+  - name: src/flashcards/Main.kt
+    visible: true
+    text: |
+      package flashcards
+      
+      fun main() {
+          println("Hello, World!")
+      }
+    learner_created: false
+  - name: test/FlashcardsTest.java
+    visible: false
+    text: "import org.hyperskill.hstest.dynamic.input.DynamicTestingMethod;\nimport\
     \ org.hyperskill.hstest.exception.outcomes.WrongAnswer;\nimport org.hyperskill.hstest.stage.StageTest;\n\
     import org.hyperskill.hstest.testcase.CheckResult;\nimport org.hyperskill.hstest.testcase.TestCase;\n\
     import org.hyperskill.hstest.testing.TestedProgram;\nimport org.junit.AfterClass;\n\
@@ -414,7 +414,10 @@ files:
     \                \"Moscow\",\n                \"London\",\n                \"\
     Abuja\",\n                \"Berlin\"\n        );\n    }\n    \n}\n\n\n\n\n\n\n\
     \n\n\n\n\n"
-  learner_created: false
+    learner_created: false
+  - name: src/task.json
+    visible: true
+    learner_created: true
 feedback_link: https://hyperskill.org/learn/step/7490#comment
 status: Unchecked
 record: -1
