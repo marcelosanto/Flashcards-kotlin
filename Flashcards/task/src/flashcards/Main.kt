@@ -1,22 +1,22 @@
 package flashcards
 
 fun main() {
-    println(palindrome(Pair("cat", "dog")))
-//    val cards = mutableMapOf<String, String>()
-//    while (true) {
-//        println("Input the action (add, remove, import, export, ask, exit):")
-//        when (readln()) {
-//            "add" -> cardAdd(cards)
-//            "remove" -> cardRemove(cards)
-//            "import" -> cardImport(cards)
-//            "export" -> cardExport(cards)
-//            "ask" -> cardAsk(cards)
-//            "exit" -> break
-//            else -> continue
-//        }
-//        println(cards)
-//
-//    }
+
+    val cards = mutableMapOf<String, String>()
+    while (true) {
+        println("Input the action (add, remove, import, export, ask, exit):")
+        when (readln()) {
+            "add" -> cardAdd(cards)
+            "remove" -> cardRemove(cards)
+            "import" -> cardImport(cards)
+            "export" -> cardExport(cards)
+            "ask" -> cardAsk(cards)
+            "exit" -> break
+            else -> continue
+        }
+        println(cards)
+
+    }
 
 //    for ((i, x) in cards) {
 //        println("Print the definition of \"$i\":")
@@ -48,7 +48,12 @@ fun cardAsk(cards: MutableMap<String, String>) {
 }
 
 fun cardRemove(cards: MutableMap<String, String>) {
-    TODO("Not yet implemented")
+    println("Which card?")
+    val cardRemove = readln()
+    if (cards.containsKey(cardRemove)) {
+        cards.remove(cardRemove)
+        println("The card has been removed.")
+    } else println("Can't remove \"$cardRemove\": there is no such card.")
 }
 
 fun cardAdd(cards: MutableMap<String, String>): MutableMap<String, String> {
@@ -91,14 +96,4 @@ fun cardAdd(cards: MutableMap<String, String>): MutableMap<String, String> {
         println("The pair (\"$card\":\"$definition\") has been added.")
         cards
     }
-}
-
-fun palindrome(pair: Pair<String, String>): Triple<String, String, Boolean> {
-    val nameOne = pair.first.split("")
-    println(nameOne)
-    val nameTwo = pair.second.split("").reversed()
-    println(nameTwo)
-    val bool = if (nameOne.size == nameTwo.size && pair.first != pair.second) nameOne.containsAll(nameTwo) else false
-
-    return Triple(pair.first, pair.second, bool)
 }

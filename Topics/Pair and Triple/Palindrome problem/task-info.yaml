@@ -1,12 +1,12 @@
 type: code
 files:
-  - name: src/Main.kt
-    visible: true
-    text: |-
-      fun palindrome(pair: Pair<String, String>): Triple<String, String, Boolean> {
-          // write your code here
-      }
-    learner_created: false
+- name: src/Main.kt
+  visible: true
+  text: |-
+    fun palindrome(pair: Pair<String, String>): Triple<String, String, Boolean> {
+        // write your code here
+    }
+  learner_created: false
 feedback_link: https://hyperskill.org/learn/step/19962#comment
 status: Solved
 feedback:
