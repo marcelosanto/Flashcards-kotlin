@@ -7,13 +7,7 @@ import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import java.io.File
 
 fun main() {
-
-    val workingDirectory = System.getProperty("user.dir")
-    val separator = File.separator
-
     val cards = mutableMapOf<String, String>()
-    val txt = "$workingDirectory${separator}cards.json"
-    val taskJson = File(txt)
 
     val moshi = Moshi.Builder()
         .add(KotlinJsonAdapterFactory())
@@ -26,26 +20,15 @@ fun main() {
         String::class.java
     )
 
-    val taskAdapter = moshi.adapter<MutableMap<String, String>>(type)
-
-    if (taskJson.exists()) {
-        val tasks = taskJson.readText()
-        val tskList = taskAdapter.fromJson(tasks)
-
-        tskList?.let {
-            cards.putAll(it)
-        }
-    }
-
-
+    val cardAdapter = moshi.adapter<MutableMap<String, String>>(type)
 
     while (true) {
         println("Input the action (add, remove, import, export, ask, exit):")
         when (readln()) {
             "add" -> cardAdd(cards)
             "remove" -> cardRemove(cards)
-            "import" -> cardImport(cards)
-            "export" -> cardExport(taskAdapter, taskJson, cards)
+            "import" -> cardImport(cardAdapter, cards)
+            "export" -> cardExport(cardAdapter, cards)
             "ask" -> cardAsk(cards)
             "exit" -> {
                 println("Bye bye!")
@@ -57,42 +40,45 @@ fun main() {
 
     }
 
-//    for ((i, x) in cards) {
-//        println("Print the definition of \"$i\":")
-//        val definition = readln()
-//        if (definition == x) println("Correct!")
-//        else {
-//            if (cards.containsValue(x)) {
-//                println(
-//                    "Wrong. The right answer is \"$x\", but your definition is correct for \"${
-//                        cards.filterValues { definition == it }.keys
-//                    }\".".replace("(\\[|\\])".toRegex(), "")
-//                )
-//            } else println("Wrong. The right answer is \"$x\".")
-//        }
-//    }
-
 }
 
-fun saveToJson(
-    taskAdapter: JsonAdapter<MutableMap<String, String>>,
-    taskJson: File,
+fun cardImport(
+    cardAdapter: JsonAdapter<MutableMap<String, String>>,
     cards: MutableMap<String, String>
 ) {
-    taskJson.writeText(taskAdapter.toJson(cards))
+
+    println("File name:")
+    val fileName = readln()
+    val cardsFile = File(fileName)
+
+    if (cardsFile.exists()) {
+        val tasks = cardsFile.readText()
+        val cardList = cardAdapter.fromJson(tasks)
+
+        cardList.let {
+            if (it != null) {
+                cards.putAll(it)
+                println("${cards.size} cards have been loaded.")
+            }
+        }
+    } else println("File not found.")
 }
+
 
 fun cardExport(
-    taskAdapter: JsonAdapter<MutableMap<String, String>>,
-    taskJson: File,
+    cardAdapter: JsonAdapter<MutableMap<String, String>>,
     cards: MutableMap<String, String>
 ) {
-    saveToJson(taskAdapter, taskJson, cards)
+    println("File name:")
+    val fileName = readln()
+
+    if (fileName.isNotBlank()) {
+        File(fileName).writeText(cardAdapter.toJson(cards))
+        println("${cards.size} cards have been saved.")
+    }
+
 }
 
-fun cardImport(cards: MutableMap<String, String>) {
-    TODO("Not yet implemented")
-}
 
 fun cardAsk(cards: MutableMap<String, String>) {
     TODO("Not yet implemented")
