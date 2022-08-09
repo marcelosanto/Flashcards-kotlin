@@ -1,264 +1,352 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="FlashcardsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-08-08T18:36:08" hostname="marcelo-systemproductname" time="0.852">
+<testsuite name="FlashcardsTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2022-08-08T23:23:26" hostname="marcelo-systemproductname" time="1.282">
   <properties/>
-  <testcase name="start" classname="FlashcardsTest" time="0.852"/>
+  <testcase name="start" classname="FlashcardsTest" time="1.282">
+    <failure message="java.lang.AssertionError: Wrong answer in test #16&#10;&#10;The number of lines your program saves is less than the number of lines that was input/output to the console&#10;&#10;Please find below the output of your program during this failed test.&#10;Note that the '&gt;' character indicates the beginning of the input line.&#10;&#10;---&#10;&#10;Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):&#10;&gt; hardest card&#10;There are no cards with errors.&#10;Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):&#10;&gt; import&#10;File name:&#10;&gt; capitals.txt&#10;1 cards have been loaded.&#10;Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):&#10;&gt; hardest card&#10;The hardest card is &quot;France&quot;. You have 2 errors answering it.&#10;Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):&#10;&gt; ask&#10;How many times to ask?&#10;&gt; 1&#10;Print the definition of &quot;France&quot;:&#10;&gt; Tokyo&#10;Wrong. The right answer is &quot;Paris&quot;, but your definition is correct for &quot;&quot;.&#10;Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):&#10;&gt; hardest card&#10;The hardest card is &quot;France&quot;. You have 3 errors answering it.&#10;Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):&#10;&gt; reset stats&#10;Card statistics have been reset&#10;Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):&#10;&gt; hardest card&#10;There are no cards with errors.&#10;Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):&#10;&gt; log&#10;File name:&#10;&gt; todayLog.txt&#10;The log has been saved.&#10;Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):" type="java.lang.AssertionError">java.lang.AssertionError: Wrong answer in test #16
+
+The number of lines your program saves is less than the number of lines that was input/output to the console
+
+Please find below the output of your program during this failed test.
+Note that the '&gt;' character indicates the beginning of the input line.
+
+---
+
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+&gt; hardest card
+There are no cards with errors.
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+&gt; import
+File name:
+&gt; capitals.txt
+1 cards have been loaded.
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+&gt; hardest card
+The hardest card is &quot;France&quot;. You have 2 errors answering it.
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+&gt; ask
+How many times to ask?
+&gt; 1
+Print the definition of &quot;France&quot;:
+&gt; Tokyo
+Wrong. The right answer is &quot;Paris&quot;, but your definition is correct for &quot;&quot;.
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+&gt; hardest card
+The hardest card is &quot;France&quot;. You have 3 errors answering it.
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+&gt; reset stats
+Card statistics have been reset
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+&gt; hardest card
+There are no cards with errors.
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+&gt; log
+File name:
+&gt; todayLog.txt
+The log has been saved.
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.hyperskill.hstest.stage.StageTest.start(StageTest.java:155)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at jdk.proxy1/jdk.proxy1.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+</failure>
+  </testcase>
   <system-out><![CDATA[?[1;31m
 Start test 1?[0m
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > exit
 Bye bye!
 ?[1;31m
 Start test 2?[0m
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > add
 The Card:
 > France
 The definition of the card:
 > Paris
 The pair ("France":"Paris") has been added.
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > add
 The Card:
 > France
 The card "France" already exists.
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > add
 The Card:
 > Great Britain
 The definition of the card:
 > Paris
 The definition "Paris" already exists.
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > exit
 Bye bye!
 ?[1;31m
 Start test 3?[0m
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > add
 The Card:
 > France
 The definition of the card:
 > Paris
 The pair ("France":"Paris") has been added.
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > add
 The Card:
 > Japan
 The definition of the card:
 > Tokyo
 The pair ("Japan":"Tokyo") has been added.
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > add
 The Card:
 > Great Britain
 The definition of the card:
 > London
 The pair ("Great Britain":"London") has been added.
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > remove
 Which card?
 > Japan
 The card has been removed.
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > remove
 Which card?
 > Wakanda
 Can't remove "Wakanda": there is no such card.
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > remove
 Which card?
 > Tokyo
 Can't remove "Tokyo": there is no such card.
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > exit
 Bye bye!
 ?[1;31m
 Start test 4?[0m
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > add
 The Card:
 > Japan
 The definition of the card:
 > Tokyo
 The pair ("Japan":"Tokyo") has been added.
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > add
 The Card:
 > France
 The definition of the card:
 > Paris
 The pair ("France":"Paris") has been added.
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > export
 File name:
 > capitals.txt
 2 cards have been saved.
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > exit
 Bye bye!
 ?[1;31m
 Start test 5?[0m
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > add
 The Card:
 > Canada
 The definition of the card:
 > Ottawa
 The pair ("Canada":"Ottawa") has been added.
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > add
 The Card:
 > Netherlands
 The definition of the card:
 > Amsterdam
 The pair ("Netherlands":"Amsterdam") has been added.
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > add
 The Card:
 > Russia
 The definition of the card:
 > Moscow
 The pair ("Russia":"Moscow") has been added.
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > add
 The Card:
 > United Kingdom
 The definition of the card:
 > London
 The pair ("United Kingdom":"London") has been added.
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > add
 The Card:
 > Nigeria
 The definition of the card:
 > Abuja
 The pair ("Nigeria":"Abuja") has been added.
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > add
 The Card:
 > Germany
 The definition of the card:
 > Berlin
 The pair ("Germany":"Berlin") has been added.
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > export
 File name:
 > capitalsNew.txt
 6 cards have been saved.
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > exit
 Bye bye!
 ?[1;31m
 Start test 6?[0m
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > import
 File name:
 > ghost_file.txt
 File not found.
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > import
 File name:
 > capitals.txt
 2 cards have been loaded.
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > remove
 Which card?
 > Japan
 The card has been removed.
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > export
 File name:
 > capitals.txt
 1 cards have been saved.
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > import
 File name:
 > capitalsNew.txt
 6 cards have been loaded.
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > export
 File name:
 > capitalsNew.txt
 7 cards have been saved.
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > exit
 Bye bye!
 ?[1;31m
 Start test 7?[0m
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > add
 The Card:
 > France
 The definition of the card:
 > Eiffel Tower
 The pair ("France":"Eiffel Tower") has been added.
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > import
 File name:
 > capitals.txt
 1 cards have been loaded.
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > ask
 How many times to ask?
 > 1
 Print the definition of "France":
 > Eiffel Tower
 Wrong. The right answer is "Paris", but your definition is correct for "".
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > ask
 How many times to ask?
 > 1
 Print the definition of "France":
 > Paris
 Correct!
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > exit
 Bye bye!
 ?[1;31m
 Start test 8?[0m
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > add
 The Card:
 > print()
 The definition of the card:
 > outputs text
 The pair ("print()":"outputs text") has been added.
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > add
 The Card:
 > str()
 The definition of the card:
 > converts to a string
 The pair ("str()":"converts to a string") has been added.
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > add
 The Card:
 > son
 The definition of the card:
 > a male child
 The pair ("son":"a male child") has been added.
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > add
 The Card:
 > daughter
 The definition of the card:
 > a female child
 The pair ("daughter":"a female child") has been added.
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > add
 The Card:
 > uncle
 The definition of the card:
 > a brother of one's parent
 The pair ("uncle":"a brother of one's parent") has been added.
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > add
 The Card:
 > ankle
 The definition of the card:
 > a part of the body where the foot and the leg meet
 The pair ("ankle":"a part of the body where the foot and the leg meet") has been added.
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > ask
 How many times to ask?
 > 6
@@ -280,54 +368,54 @@ Correct!
 Print the definition of "ankle":
 > a part of the body where the foot and the leg meet
 Correct!
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > exit
 Bye bye!
 ?[1;31m
 Start test 9?[0m
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > add
 The Card:
 > print()
 The definition of the card:
 > outputs text
 The pair ("print()":"outputs text") has been added.
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > add
 The Card:
 > str()
 The definition of the card:
 > converts to a string
 The pair ("str()":"converts to a string") has been added.
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > add
 The Card:
 > son
 The definition of the card:
 > a male child
 The pair ("son":"a male child") has been added.
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > add
 The Card:
 > daughter
 The definition of the card:
 > a female child
 The pair ("daughter":"a female child") has been added.
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > add
 The Card:
 > uncle
 The definition of the card:
 > a brother of one's parent
 The pair ("uncle":"a brother of one's parent") has been added.
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > add
 The Card:
 > ankle
 The definition of the card:
 > a part of the body where the foot and the leg meet
 The pair ("ankle":"a part of the body where the foot and the leg meet") has been added.
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > ask
 How many times to ask?
 > 6
@@ -349,54 +437,54 @@ Wrong. The right answer is "a brother of one's parent", but your definition is c
 Print the definition of "ankle":
 > a part of the body where the foot and the leg meet or the arm
 Wrong. The right answer is "a part of the body where the foot and the leg meet", but your definition is correct for "".
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > exit
 Bye bye!
 ?[1;31m
 Start test 10?[0m
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > add
 The Card:
 > print()
 The definition of the card:
 > outputs text
 The pair ("print()":"outputs text") has been added.
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > add
 The Card:
 > str()
 The definition of the card:
 > converts to a string
 The pair ("str()":"converts to a string") has been added.
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > add
 The Card:
 > son
 The definition of the card:
 > a male child
 The pair ("son":"a male child") has been added.
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > add
 The Card:
 > daughter
 The definition of the card:
 > a female child
 The pair ("daughter":"a female child") has been added.
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > add
 The Card:
 > uncle
 The definition of the card:
 > a brother of one's parent
 The pair ("uncle":"a brother of one's parent") has been added.
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > add
 The Card:
 > ankle
 The definition of the card:
 > a part of the body where the foot and the leg meet
 The pair ("ankle":"a part of the body where the foot and the leg meet") has been added.
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > ask
 How many times to ask?
 > 6
@@ -418,9 +506,202 @@ Wrong. The right answer is "a brother of one's parent", but your definition is c
 Print the definition of "ankle":
 > a brother of one's parent
 Wrong. The right answer is "a part of the body where the foot and the leg meet", but your definition is correct for "uncle".
-Input the action (add, remove, import, export, ask, exit):
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > exit
 Bye bye!
+?[1;31m
+Start test 11?[0m
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+> hardest card
+There are no cards with errors.
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+> add
+The Card:
+> France
+The definition of the card:
+> Paris
+The pair ("France":"Paris") has been added.
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+> ask
+How many times to ask?
+> 1
+Print the definition of "France":
+> Eiffel Tower
+Wrong. The right answer is "Paris", but your definition is correct for "".
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+> ask
+How many times to ask?
+> 1
+Print the definition of "France":
+> Lyon
+Wrong. The right answer is "Paris", but your definition is correct for "".
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+> hardest card
+The hardest card is "France". You have 2 errors answering it.
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+> export
+File name:
+> capitals.txt
+1 cards have been saved.
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+> exit
+Bye bye!
+?[1;31m
+Start test 12?[0m
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+> add
+The Card:
+> Russia
+The definition of the card:
+> Moscow
+The pair ("Russia":"Moscow") has been added.
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+> ask
+How many times to ask?
+> 1
+Print the definition of "Russia":
+> Saint Petersburg
+Wrong. The right answer is "Moscow", but your definition is correct for "".
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+> ask
+How many times to ask?
+> 1
+Print the definition of "Russia":
+> Saint Petersburg
+Wrong. The right answer is "Moscow", but your definition is correct for "".
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+> ask
+How many times to ask?
+> 1
+Print the definition of "Russia":
+> Saint Petersburg
+Wrong. The right answer is "Moscow", but your definition is correct for "".
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+> hardest card
+The hardest card is "Russia". You have 3 errors answering it.
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+> export
+File name:
+> capitalsNew.txt
+1 cards have been saved.
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+> exit
+Bye bye!
+?[1;31m
+Start test 13?[0m
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+> import
+File name:
+> capitals.txt
+1 cards have been loaded.
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+> import
+File name:
+> capitalsNew.txt
+1 cards have been loaded.
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+> hardest card
+The hardest card is "Russia". You have 3 errors answering it.
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+> exit
+Bye bye!
+?[1;31m
+Start test 14?[0m
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+> import
+File name:
+> capitals.txt
+1 cards have been loaded.
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+> ask
+How many times to ask?
+> 1
+Print the definition of "France":
+> Lyon
+Wrong. The right answer is "Paris", but your definition is correct for "".
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+> import
+File name:
+> capitalsNew.txt
+1 cards have been loaded.
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+> hardest card
+The hardest cards are "France", "Russia". You have 3 errors answering them.
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+> exit
+Bye bye!
+?[1;31m
+Start test 15?[0m
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+> hardest card
+There are no cards with errors.
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+> import
+File name:
+> capitals.txt
+1 cards have been loaded.
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+> hardest card
+The hardest card is "France". You have 2 errors answering it.
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+> ask
+How many times to ask?
+> 1
+Print the definition of "France":
+> Tokyo
+Wrong. The right answer is "Paris", but your definition is correct for "".
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+> hardest card
+The hardest card is "France". You have 3 errors answering it.
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+> import
+File name:
+> capitalsNew.txt
+1 cards have been loaded.
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+> reset stats
+Card statistics have been reset
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+> hardest card
+There are no cards with errors.
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+> exit
+Bye bye!
+?[1;31m
+Start test 16?[0m
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+> hardest card
+There are no cards with errors.
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+> import
+File name:
+> capitals.txt
+1 cards have been loaded.
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+> hardest card
+The hardest card is "France". You have 2 errors answering it.
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+> ask
+How many times to ask?
+> 1
+Print the definition of "France":
+> Tokyo
+Wrong. The right answer is "Paris", but your definition is correct for "".
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+> hardest card
+The hardest card is "France". You have 3 errors answering it.
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+> reset stats
+Card statistics have been reset
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+> hardest card
+There are no cards with errors.
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+> log
+File name:
+> todayLog.txt
+The log has been saved.
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

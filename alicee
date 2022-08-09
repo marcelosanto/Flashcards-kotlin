@@ -1,0 +1,10 @@
+
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+add
+The Card:
+alice
+minha filha
+The pair ("alice":"minha filha") has been added.
+
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+log
