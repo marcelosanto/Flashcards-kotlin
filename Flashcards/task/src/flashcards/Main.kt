@@ -41,8 +41,8 @@ fun main() {
         println("Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):")
         val opt = readln()
 
-        logs.add("\nInput the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):")
-        logs.add(opt)
+        logs.add("Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):")
+        logs.add("> $opt")
 
         when (opt) {
             "add" -> cardAdd(cards, logs)
@@ -67,16 +67,21 @@ fun main() {
 fun resetStats(statsCards: MutableMap<String, Int>, logs: MutableList<String>) {
     statsCards.clear()
     println("Card statistics have been reset")
+    logs.add("Card statistics have been reset")
 }
 
 fun createLog(logsAdapter: JsonAdapter<MutableList<String>>, logs: MutableList<String>) {
     println("File name:")
+    logs.add("File name:")
     val fileName = readln()
+    logs.add(fileName)
     if (fileName.isNotBlank()) {
+        // File(fileName).appendText(logsAdapter.toJson(logs))
         for (i in logs) {
-            File(fileName).appendText(i)
-            File(fileName).appendText("\n")
+            File(fileName).appendText("$i \n")
         }
+
+        println(File(fileName).length())
         println("The log has been saved.")
     }
 }
@@ -97,7 +102,11 @@ fun hardestCard(statsCards: MutableMap<String, Int>, logs: MutableList<String>) 
         val cardOrCards = if (maxValueKeys.size > 1) "cards" else "card"
 
         println("The hardest $cardOrCards $areOrIs ${maxValueKeys.joinToString()}. You have $maxValue errors answering $themOrIt.")
-    } else println("There are no cards with errors.")
+        logs.add("The hardest $cardOrCards $areOrIs ${maxValueKeys.joinToString()}. You have $maxValue errors answering $themOrIt.")
+    } else {
+        println("There are no cards with errors.")
+        logs.add("There are no cards with errors.")
+    }
 }
 
 fun cardImport(
@@ -109,10 +118,13 @@ fun cardImport(
 ) {
 
     println("File name:")
+    logs.add("File name:")
     val fileName = readln()
     val fileNameStats = "${fileName}stats"
     val cardsFile = File(fileName)
     val cardsStatsFile = File(fileNameStats)
+
+    logs.add(fileName)
 
     if (cardsFile.exists() && cardsStatsFile.exists()) {
         val card = cardsFile.readText()
@@ -123,6 +135,7 @@ fun cardImport(
         cardList!!.let {
             cards.putAll(it)
             println("${cardList.size} cards have been loaded.")
+            logs.add("${cardList.size} cards have been loaded.")
 
         }
 
@@ -130,7 +143,10 @@ fun cardImport(
             statsCards.putAll(it)
         }
 
-    } else println("File not found.")
+    } else {
+        println("File not found.")
+        logs.add("File not found.")
+    }
 }
 
 
@@ -142,13 +158,18 @@ fun cardExport(
     logs: MutableList<String>
 ) {
     println("File name:")
+    logs.add("File name:")
     val fileName = readln()
     val fileNameStats = "${fileName}stats"
+
+    logs.add(fileName)
 
     if (fileName.isNotBlank()) {
         File(fileName).writeText(cardAdapter.toJson(cards))
         File(fileNameStats).writeText(cardStatsAdapter.toJson(statsCards))
         println("${cards.size} cards have been saved.")
+
+        logs.add("${cards.size} cards have been saved.")
     }
 
 }
@@ -158,6 +179,7 @@ fun cardAsk(cards: MutableMap<String, String>, statsCards: MutableMap<String, In
     println("How many times to ask?")
     logs.add("How many times to ask?")
     val askTime = readln().toInt()
+    logs.add(askTime.toString())
 
     var count = 0
 
@@ -165,11 +187,21 @@ fun cardAsk(cards: MutableMap<String, String>, statsCards: MutableMap<String, In
         if (count == askTime) break
 
         println("Print the definition of \"$i\":")
+        logs.add("Print the definition of \"$i\":")
         val definition = readln()
-        if (definition == x) println("Correct!")
-        else {
+        logs.add(definition)
+
+        if (definition == x) {
+            println("Correct!")
+            logs.add("Correct!")
+        } else {
             if (cards.containsValue(x)) {
                 println(
+                    "Wrong. The right answer is \"$x\", but your definition is correct for \"${
+                        cards.filterValues { definition == it }.keys
+                    }\".".replace("(\\[|\\])".toRegex(), "")
+                )
+                logs.add(
                     "Wrong. The right answer is \"$x\", but your definition is correct for \"${
                         cards.filterValues { definition == it }.keys
                     }\".".replace("(\\[|\\])".toRegex(), "")
@@ -177,6 +209,7 @@ fun cardAsk(cards: MutableMap<String, String>, statsCards: MutableMap<String, In
                 wrongAnswer(i, statsCards)
             } else {
                 println("Wrong. The right answer is \"$x\".")
+                logs.add("Wrong. The right answer is \"$x\".")
                 wrongAnswer(i, statsCards)
             }
         }
@@ -199,7 +232,12 @@ fun wrongAnswer(i: String, statsCards: MutableMap<String, Int>) {
 
 fun cardRemove(cards: MutableMap<String, String>, logs: MutableList<String>) {
     println("Which card?")
+    logs.add("Which card?")
+
     val cardRemove = readln()
+    logs.add(cardRemove)
+
+
     if (cards.containsKey(cardRemove)) {
         cards.remove(cardRemove)
         println("The card has been removed.")
@@ -233,6 +271,7 @@ fun cardAdd(cards: MutableMap<String, String>, logs: MutableList<String>): Mutab
 
     if (card != "null") {
         println("The definition of the card:")
+        logs.add("The definition of the card:")
         definition = readln().let {
             var temp = it
             while (true) {

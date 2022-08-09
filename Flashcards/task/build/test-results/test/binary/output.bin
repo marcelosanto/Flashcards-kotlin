@@ -649,5 +649,8 @@ The Card:
 > log
 File name:
 > todayLog.txt
+1288
 The log has been saved.
 [Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+> exit
+	Bye bye!

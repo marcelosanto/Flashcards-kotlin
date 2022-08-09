@@ -1,0 +1,30 @@
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+add
+The Card:
+cor do ceu
+é azul
+The pair ("cor do ceu":"é azul") has been added.
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+add
+The Card:
+lugar aonde moro
+brasil
+The pair ("lugar aonde moro":"brasil") has been added.
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+ask
+How many times to ask?
+2
+Print the definition of "cor do ceu":
+é azul
+Correct!
+Print the definition of "lugar aonde moro":
+brasil
+Correct!
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+export
+File name:
+testando.txt
+2 cards have been saved.
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+log
+File name:
