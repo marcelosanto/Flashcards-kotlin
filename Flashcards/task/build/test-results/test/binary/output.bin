@@ -95,6 +95,7 @@ The Card:
 ,The pair ("France":"Paris") has been added.
 [Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 	> export
+
 File name:
 > capitals.txt
 2 cards have been saved.
@@ -155,6 +156,7 @@ The Card:
 .The pair ("Germany":"Berlin") has been added.
 [Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 	> export
+
 File name:
 > capitalsNew.txt
 6 cards have been saved.
@@ -180,6 +182,7 @@ The Card:
 The card has been removed.
 [Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 	> export
+
 File name:
 > capitals.txt
 1 cards have been saved.
@@ -190,6 +193,7 @@ The Card:
 6 cards have been loaded.
 [Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 	> export
+
 File name:
 > capitalsNew.txt
 7 cards have been saved.
@@ -488,6 +492,7 @@ The Card:
 >The hardest card is "France". You have 2 errors answering it.
 [Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 	> export
+
 File name:
 > capitals.txt
 1 cards have been saved.
@@ -530,6 +535,7 @@ The Card:
 >The hardest card is "Russia". You have 3 errors answering it.
 [Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 	> export
+
 File name:
 > capitalsNew.txt
 1 cards have been saved.
@@ -653,4 +659,49 @@ The Card:
 The log has been saved.
 [Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 > exit
+	Bye bye!
+[1;31m
+Start test 17[0m
+[Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+> hardest card
+ There are no cards with errors.
+[Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+> add
+
+The Card:
+> Movie
+The definition of the card:
+R> A recorded sequence of images displayed on a screen at a rate sufficiently fast
+uThe pair ("Movie":"A recorded sequence of images displayed on a screen at a rate sufficiently fast") has been added.
+[Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+> exit
+fridayThe13th.txt
+1 cards have been saved.
+	Bye bye!
+[1;31m
+Start test 18[0m
+1 cards have been loaded.
+[Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+> add
+
+The Card:
+> Movie
+!The card "Movie" already exists.
+[Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+	> remove
+Which card?
+> Movie
+The card has been removed.
+[Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+> add
+
+The Card:
+	> Series
+The definition of the card:
+:> A television program which consists of several episodes
+^The pair ("Series":"A television program which consists of several episodes") has been added.
+[Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+> exit
+newFridayThe13th.txt
+1 cards have been saved.
 	Bye bye!

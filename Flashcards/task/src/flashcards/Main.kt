@@ -6,7 +6,7 @@ import com.squareup.moshi.Types
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import java.io.File
 
-fun main() {
+fun main(args: Array<String>) {
     val cards = mutableMapOf<String, String>()
     val statsCards = mutableMapOf<String, Int>()
     val logs = mutableListOf<String>()
@@ -37,6 +37,10 @@ fun main() {
 
     val logsAdapter = moshi.adapter<MutableList<String>>(typeLog)
 
+    var fileName = importOrExport(args, cardAdapter, cardStatsAdapter, cards, statsCards, logs)
+
+
+
     while (true) {
         println("Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):")
         val opt = readln()
@@ -47,10 +51,19 @@ fun main() {
         when (opt) {
             "add" -> cardAdd(cards, logs)
             "remove" -> cardRemove(cards, logs)
-            "import" -> cardImport(cardAdapter, cardStatsAdapter, cards, statsCards, logs)
-            "export" -> cardExport(cardAdapter, cardStatsAdapter, cards, statsCards, logs)
+            "import" -> cardImport(cardAdapter, cardStatsAdapter, cards, statsCards, logs, null)
+            "export" -> cardExport(cardAdapter, cardStatsAdapter, cards, statsCards, logs, fileName, false)
             "ask" -> cardAsk(cards, statsCards, logs)
             "exit" -> {
+                if (fileName.isNotEmpty()) cardExport(
+                    cardAdapter,
+                    cardStatsAdapter,
+                    cards,
+                    statsCards,
+                    logs,
+                    fileName,
+                    true
+                )
                 println("Bye bye!")
                 logs.add("Bye bye!")
                 break
@@ -62,6 +75,37 @@ fun main() {
         }
     }
 
+}
+
+private fun importOrExport(
+    args: Array<String>,
+    cardAdapter: JsonAdapter<MutableMap<String, String>>,
+    cardStatsAdapter: JsonAdapter<MutableMap<String, Int>>,
+    cards: MutableMap<String, String>,
+    statsCards: MutableMap<String, Int>,
+    logs: MutableList<String>,
+): String {
+
+    var fileName = ""
+
+    if (args.isNotEmpty() && args.size <= 2) {
+        if (args[0] == "-import") {
+            cardImport(cardAdapter, cardStatsAdapter, cards, statsCards, logs, args[1])
+        } else {
+            fileName = args[1]
+        }
+    } else if (args.isNotEmpty() && args.size > 2) {
+        if (args[0] == "-import") {
+            cardImport(cardAdapter, cardStatsAdapter, cards, statsCards, logs, args[1])
+        } else if (args[2] == "-import") {
+            fileName = args[1]
+            cardImport(cardAdapter, cardStatsAdapter, cards, statsCards, logs, args[3])
+        } else {
+            fileName = args[3]
+        }
+    }
+
+    return fileName
 }
 
 fun resetStats(statsCards: MutableMap<String, Int>, logs: MutableList<String>) {
@@ -114,12 +158,21 @@ fun cardImport(
     cardStatsAdapter: JsonAdapter<MutableMap<String, Int>>,
     cards: MutableMap<String, String>,
     statsCards: MutableMap<String, Int>,
-    logs: MutableList<String>
+    logs: MutableList<String>,
+    nameFile: String?
 ) {
 
-    println("File name:")
-    logs.add("File name:")
-    val fileName = readln()
+
+    var fileName = ""
+
+    fileName = if (nameFile.isNullOrBlank()) {
+        println("File name:")
+        logs.add("File name:")
+        readln()
+    } else {
+        nameFile
+    }
+
     val fileNameStats = "${fileName}stats"
     val cardsFile = File(fileName)
     val cardsStatsFile = File(fileNameStats)
@@ -155,17 +208,30 @@ fun cardExport(
     cardStatsAdapter: JsonAdapter<MutableMap<String, Int>>,
     cards: MutableMap<String, String>,
     statsCards: MutableMap<String, Int>,
-    logs: MutableList<String>
+    logs: MutableList<String>,
+    fileName: String,
+    export: Boolean
 ) {
-    println("File name:")
-    logs.add("File name:")
-    val fileName = readln()
-    val fileNameStats = "${fileName}stats"
+    var name: String? = null
+    var fileNameStats = ""
 
-    logs.add(fileName)
+    println(fileName)
 
-    if (fileName.isNotBlank()) {
-        File(fileName).writeText(cardAdapter.toJson(cards))
+    if (fileName.isBlank()) {
+        println("File name:")
+        logs.add("File name:")
+        name = readln()
+    } else {
+        name = fileName
+    }
+
+
+    logs.add(name)
+    fileNameStats = "${name}stats"
+
+
+    if (!name.isNullOrBlank()) {
+        File(name).writeText(cardAdapter.toJson(cards))
         File(fileNameStats).writeText(cardStatsAdapter.toJson(statsCards))
         println("${cards.size} cards have been saved.")
 

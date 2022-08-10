@@ -638,6 +638,30 @@ files:
     \   \"London\",\n                \"Abuja\",\n                \"Berlin\"\n    \
     \    );\n    }\n    \n}\n"
   learner_created: false
+- name: capitalsNew.txtstats
+  visible: true
+  text: '{"Russia":3}'
+  learner_created: true
+- name: capitals.txtstats
+  visible: true
+  text: '{"France":2}'
+  learner_created: true
+- name: eeee
+  visible: true
+  learner_created: true
+- name: eeeestats
+  visible: true
+  learner_created: true
+- name: fridayThe13th.txtstats
+  visible: true
+  learner_created: true
+- name: newFridayThe13th.txtstats
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/learn/step/7492#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Well done! You've finished the project. Select a new project on <a href="https://hyperskill.org/projects">JetBrains
+    Academy</a> to continue learning.
+  time: Wed, 10 Aug 2022 02:50:11 UTC
 record: -1
